@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: black;
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.oculto {
+    display: none;
+}
+
+.tela-inicial{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    text-align: center;
+    padding: 0 40px;
+}
+
+.tela-inicial h1 {
+    font-size: 90px;
+    letter-spacing: 2px;
+}
+
+#inputNumero {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    padding: 8px;
+    height: 200px;
+    width: 600px;
+    outline: none;
+}
+
+.erro {
+    color: red;
+    min-height: 20px;
+    font-size: 14px;
+}
+
+.mao {
+    width: 200px;
+    height: auto;
+    position: relative;
+    animation: flutuar 3s ease-in-out infinite;
+}
+
+.mao-esquerda {
+    animation-delay: 0s;
+}
+
+.mao-direita {
+    animation-delay: 1.5s;
+}
+
+@keyframes flutuar {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+html {
+    overflow: hidden;
+}
+
+
+.tela-resposta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    max-width: 700px;
+    padding: 40px
+}
+
+#textoResposta {
+    max-height: 70vh;
+    overflow-y: auto;
+    white-space: pre-line;
+    line-height: 1.6;
+    font-size: left;
+    text-align: left;
+    padding-right: 12px;
+}
+
+.botoes {
+    display: flex;
+    gap: 16px;
+}
+
+.botoes button {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 10px 24px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.botoes button:hover {
+    background: white;
+    color: black
+}
