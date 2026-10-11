@@ -12,6 +12,23 @@ inputNumero.addEventListener("keydown", function(evento){
     }
 })
 
+botaoSair.addEventListener("click", function(){
+    trocarTela(telaResposta, telaInicial)
+    inputNumero.value = ""
+})
+
+function trocarTela(telaSair, telaEntrar) {
+    gsap.to(telaSair, {
+        opacity: 0,
+        duration: 0.4,
+        onComplete: function () {
+            telaSair.classList.add("oculto")
+            telaEntrar.classList.remove("oculto")
+            gsap.fromTo(telaEntrar, { opacity: 0}, { opacity: 1, duration: 0.4})   
+        }
+    })
+}
+
 async function buscarTopico(){
     const numero = inputNumero.value
 
@@ -27,6 +44,5 @@ async function buscarTopico(){
     mensagemErro.textContent = ""
     textoResposta.textContent = dados.texto
 
-    telaInicial.classList.add("oculto")
-    telaResposta.classList.remove("oculto")
+    trocarTela(telaInicial, telaResposta)
 }   
